@@ -79,9 +79,9 @@ namespace LinkNote
         void setupViewPager(Android.Support.V4.View.ViewPager viewPager)
         {
             var adapter = new Adapter(SupportFragmentManager);
-            adapter.AddFragment(new NoteListFragment(), "Category 1");
-            adapter.AddFragment(new NoteListFragment(), "Category 2");
-            adapter.AddFragment(new NoteListFragment(), "Category 3");
+            adapter.AddFragment(new NoteListFragment(), "所有笔记");
+            adapter.AddFragment(new NoteListFragment(), "定时笔记");
+            adapter.AddFragment(new NoteListFragment(), "回收站");
             viewPager.Adapter = adapter;
         }
 
