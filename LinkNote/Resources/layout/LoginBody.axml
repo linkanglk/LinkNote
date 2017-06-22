@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp">
+    android:paddingRight="20dp"
+    android:background="@color/white_color">
     <EditText
         style="@style/Base.Theme.EditText"
         android:inputType="textEmailAddress"

@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="window_background">#FFF5F5F5</color>
-  <color name="base_color">#2DBE60</color>
+  <color name="base_color">#2DBE60</color> 
+  <color name="button_click_color">#237841</color><!-- 按钮点击后颜色 -->
+  <color name="button_click_text_color">#D2EBDA</color>
   <color name="statusbar_color">#1D7E3F</color>
   <color name="white_color">#ffffff</color>
 </resources>
