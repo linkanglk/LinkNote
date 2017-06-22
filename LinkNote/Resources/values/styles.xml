@@ -25,5 +25,23 @@
       <item name="android:paddingBottom">24dp</item>
       <item name="android:orientation">vertical</item>
     </style>
+
+  <!-- 输入框基本样式 -->
+  <style name="Base.Theme.EditText" parent="android:style/Widget.Holo.Light.EditText">
+    <item name="android:paddingBottom">15dp</item>
+    <item name="android:textColorHint">#9D9D9D</item>
+    <item name="android:layout_marginTop">5dp</item>
+  </style>
+  <!-- 按钮基本样式 -->
+  <style name="Base.Theme.Button" parent="android:style/Widget.Holo.Light.Button">
+    <item name="android:background">@color/base_color</item>
+    <item name="android:textColor">@color/white_color</item>
+    <item name="android:elevation">5dp</item>
+    <item name="android:layout_height">40dp</item>
+    <item name="android:layout_marginTop">14dp</item>
+    <item name="android:layout_marginLeft">8dp</item>
+    <item name="android:layout_marginRight">8dp</item>
+    <item name="android:textSize">15dp</item>
+  </style>
   
 </resources>

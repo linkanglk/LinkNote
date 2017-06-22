@@ -3,4 +3,5 @@
   <color name="window_background">#FFF5F5F5</color>
   <color name="base_color">#2DBE60</color>
   <color name="statusbar_color">#1D7E3F</color>
+  <color name="white_color">#ffffff</color>
 </resources>

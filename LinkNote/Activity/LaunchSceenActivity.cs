@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Transitions;
+using LinkNote.Activity;
 
 /// <summary>
 /// 程序启动页
@@ -37,7 +38,7 @@ namespace LinkNote.Activitys
             new Handler().PostDelayed(delegate
             {
                 Intent i = new Intent();
-                i.SetClass(this, typeof(MainActivity));
+                i.SetClass(this, typeof(LoginMainActivity));
                 StartActivity(i);
                 OverridePendingTransition(Resource.Animation.abc_fade_in, Resource.Animation.abc_fade_out); // 淡入淡出效果
                 Finish();

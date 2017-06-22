@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity\LaunchSceenActivity.cs" />
+    <Compile Include="Activity\LoginMainActivity.cs" />
     <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="Activity\NoteDetailActivity.cs" />
     <Compile Include="Fragment\NoteListFragment.cs" />
@@ -117,6 +118,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\nav_header.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginMain.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginHeader.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginBody.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
