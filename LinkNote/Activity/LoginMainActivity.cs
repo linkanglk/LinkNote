@@ -44,6 +44,22 @@ namespace LinkNote.Activity
         {
             CoordinatorLayout rootView = (CoordinatorLayout)FindViewById(Resource.Id.clRootActivity);
             rootView.ViewTreeObserver.AddOnGlobalLayoutListener(new RootViewOnGlobalLayoutListener(rootView, _context));
+
+            Button btnContinue = (Button)FindViewById(Resource.Id.btnContinue); // 继续按钮
+            btnContinue.Click += BtnContinue_Click; // 继续按钮点击事件
+        }
+
+        private void BtnContinue_Click(object sender, EventArgs e)
+        {
+            EditText txtUserName = (EditText)FindViewById(Resource.Id.txtUserName);
+            if (txtUserName.Text == "")
+            {
+                new AlertDialog.Builder(this).SetTitle("登录错误")
+                    .SetMessage("输入的电子邮件有误。请再试一次。").SetNegativeButton("好", delegate
+                    {
+
+                    }).Show();
+            }
         }
     }
 

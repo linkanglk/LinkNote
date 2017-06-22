@@ -11,11 +11,11 @@
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1"
+        android:id="@+id/txtUserName"
         android:hint="电子邮箱或用户名" />
     <Button
         style="@style/Base.Theme.Button"
         android:text="继续"
         android:layout_width="match_parent"
-        android:id="@+id/button1" />
+        android:id="@+id/btnContinue" />
 </LinearLayout>

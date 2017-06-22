@@ -2045,7 +2045,7 @@ namespace LinkNote
 			public const int bottom = 2131165226;
 			
 			// aapt resource value: 0x7f070077
-			public const int button1 = 2131165303;
+			public const int btnContinue = 2131165303;
 			
 			// aapt resource value: 0x7f070044
 			public const int buttonPanel = 2131165252;
@@ -2118,9 +2118,6 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f07007c
 			public const int drawer_layout = 2131165308;
-			
-			// aapt resource value: 0x7f070076
-			public const int editText1 = 2131165302;
 			
 			// aapt resource value: 0x7f07005c
 			public const int edit_query = 2131165276;
@@ -2409,6 +2406,9 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f070069
 			public const int touch_outside = 2131165289;
+			
+			// aapt resource value: 0x7f070076
+			public const int txtUserName = 2131165302;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
