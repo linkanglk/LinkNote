@@ -2739,11 +2739,17 @@ namespace LinkNote
 			// aapt resource value: 0x7f08001c
 			public const int LoginNameErrorMessage = 2131230748;
 			
+			// aapt resource value: 0x7f08001e
+			public const int LoginNameSecondErrorMessage = 2131230750;
+			
+			// aapt resource value: 0x7f08001f
+			public const int LoginPassWordSecondErrorMessage = 2131230751;
+			
 			// aapt resource value: 0x7f08001d
 			public const int NetworkStateErrorMessage = 2131230749;
 			
-			// aapt resource value: 0x7f08001e
-			public const int OneButtonText = 2131230750;
+			// aapt resource value: 0x7f080020
+			public const int OneButtonText = 2131230752;
 			
 			// aapt resource value: 0x7f080000
 			public const int abc_action_bar_home_description = 2131230720;

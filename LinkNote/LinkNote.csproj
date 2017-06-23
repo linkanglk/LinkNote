@@ -97,6 +97,7 @@
     <Compile Include="Fragment\LoginSecondStepFragment.cs" />
     <Compile Include="Fragment\NoteListFragment.cs" />
     <Compile Include="OtherClass\LinkNoteAlertDialog.cs" />
+    <Compile Include="OtherClass\LinkNoteLoadingDialog.cs" />
     <Compile Include="OtherClass\NetworkState.cs" />
     <Compile Include="OtherClass\Notes.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
