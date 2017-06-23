@@ -19,6 +19,7 @@ using LinkNote.ViewPager;
 using LinkNote.Adapter.ViewPagerAdapter;
 using Android.Support.V7.App;
 using LinkNote.Fragment;
+using System.Text.RegularExpressions;
 
 namespace LinkNote.Activity
 {
@@ -28,6 +29,7 @@ namespace LinkNote.Activity
         LoginMainActivity _context;
         public RelativeLayout header;
         LinkNoteViewPager vpBody;
+        int fragmentIndex = 0;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,7 +64,16 @@ namespace LinkNote.Activity
 
         private void VpBody_PageSelected(object sender, Android.Support.V4.View.ViewPager.PageSelectedEventArgs e)
         {
+            fragmentIndex = e.Position;
             vpBody.SetFragmentIndex(e.Position);
+        }
+
+        public override void OnBackPressed()
+        {
+            if (fragmentIndex == 1)
+                vpBody.SetCurrentItem(0, true);
+            else
+                Finish();
         }
 
         private void FristViewCreateViewCallBack(View fristView)
@@ -82,6 +93,7 @@ namespace LinkNote.Activity
                     }
                     else
                     {
+                        // 可以验证用户是否存在，
                         // 跳转到下一页
                         vpBody.SetCurrentItem(1, true);
                     }
@@ -98,6 +110,10 @@ namespace LinkNote.Activity
         private void SecondViewCreateViewCallBack(View secondView)
         {
             Button btnLogin = (Button)secondView.FindViewById(Resource.Id.btnLogin);
+            LinearLayout lyCreateAccount = (LinearLayout)secondView.FindViewById(Resource.Id.lyCreateAccount);
+            LinearLayout lyLoginContent = (LinearLayout)secondView.FindViewById(Resource.Id.lyLoginContent);
+            LinearLayout lyRegisterContent = (LinearLayout)secondView.FindViewById(Resource.Id.lyRegisterContent);
+            bool check = true;
             btnLogin.Click += delegate
             {
                 EditText txtUserName = (EditText)secondView.FindViewById(Resource.Id.txtUserName);
@@ -117,7 +133,72 @@ namespace LinkNote.Activity
                     // 验证用户名和密码
                 }
             };
+            lyCreateAccount.Click += delegate
+            {
+                // 跳转到注册页面
+                lyLoginContent.Visibility = ViewStates.Gone;
+                lyRegisterContent.Visibility = ViewStates.Visible;
+            };
+            TextView txtForgetPassWord = (TextView)secondView.FindViewById(Resource.Id.txtForgetPassWord);
+            txtForgetPassWord.Click += delegate
+            {
+                // 跳转忘记密码页面
+            };
+            TextView txtChangeVersion = (TextView)secondView.FindViewById(Resource.Id.txtChangeVersion);
+            txtChangeVersion.Click += delegate
+            {
+                // 改变版本
+                if (check)
+                {
+                    txtChangeVersion.SetText(Resource.String.LoginChangeNormal);
+                    check = false;
+                }
+                else
+                {
+                    txtChangeVersion.SetText(Resource.String.LoginChangeInternational);
+                    check = true;
+                }
+            };
+            LinearLayout lyToLogin = (LinearLayout)secondView.FindViewById(Resource.Id.lyToLogin);
+            lyToLogin.Click += delegate
+            {
+                // 跳转登录页面
+                lyRegisterContent.Visibility = ViewStates.Gone;
+                lyLoginContent.Visibility = ViewStates.Visible;
+            };
+            Button btnRegister = (Button)secondView.FindViewById(Resource.Id.btnRegister);
+            btnRegister.Click += delegate
+            {
+                EditText txtUserEmail = (EditText)secondView.FindViewById(Resource.Id.txtUserEmail);
+                EditText txtUserRegisterPassWord = (EditText)secondView.FindViewById(Resource.Id.txtUserRegisterPassWord);
+                Regex r = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
+                if (txtUserEmail.Text == "")
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.RegisterErrorTitle, 
+                        Resource.String.RegisterEmailNullMessage, null);
+                }
+                else if (!r.IsMatch(txtUserEmail.Text))
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.RegisterErrorTitle,
+                        Resource.String.RegisterEmailErrorMessage, null);
+                }
+                else if (txtUserRegisterPassWord.Text == "")
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.RegisterErrorTitle,
+                        Resource.String.RegisterPassWordNullMessage, null);
+                }
+                else if (txtUserRegisterPassWord.Text.Length < 6)
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.RegisterErrorTitle,
+                        Resource.String.RegisterPassWordErrorMessage, null);
+                }
+                else
+                {
+                    // 注册用户
+                }
+            };
         }
+
     }
     
     public class RootViewOnGlobalLayoutListener : Java.Lang.Object, ViewTreeObserver.IOnGlobalLayoutListener

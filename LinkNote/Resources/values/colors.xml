@@ -6,4 +6,5 @@
   <color name="button_click_text_color">#D2EBDA</color>
   <color name="statusbar_color">#1D7E3F</color>
   <color name="white_color">#ffffff</color>
+  <color name="gray_color">#B0AEAD</color>
 </resources>

@@ -5,23 +5,172 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp">
-    <EditText
-        style="@style/Base.Theme.EditText"
-        android:inputType="textEmailAddress"
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtUserName"
-        android:hint="用户名或电子邮箱" />
-    <EditText
-        style="@style/Base.Theme.EditText"
-        android:inputType="textPassword"
+        android:layout_height="match_parent"
+        android:id="@+id/lyLoginContent">
+        <EditText
+            style="@style/Base.Theme.EditText"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUserName"
+            android:hint="用户名或电子邮箱"
+            android:layout_marginTop="13dp" />
+        <EditText
+            style="@style/Base.Theme.EditText"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUserPassWord"
+            android:hint="密码"
+            android:layout_marginTop="-8dp" />
+        <Button
+            style="@style/Base.Theme.Button"
+            android:text="登录"
+            android:layout_width="match_parent"
+            android:id="@+id/btnLogin"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:text="@string/LoginChangeInternational"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtChangeVersion"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:textSize="13dp"
+            android:textColor="@color/gray_color"
+            android:typeface="sans" />
+        <TextView
+            android:text="忘记密码？"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtForgetPassWord"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/base_color"
+            android:layout_marginTop="15dp"
+            android:textSize="11dp"
+            android:typeface="sans" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lyCreateAccount"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:text="或"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView1"
+                android:textSize="13dp"
+                android:layout_marginRight="4dp"
+                android:textColor="@color/gray_color"
+                android:typeface="sans" />
+            <TextView
+                android:text="创建新账户"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView2"
+                android:textColor="@color/base_color"
+                android:textSize="13dp"
+                android:typeface="sans" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtUserPassWord"
-        android:hint="密码" />
-    <Button
-        style="@style/Base.Theme.Button"
-        android:text="登录"
-        android:layout_width="match_parent"
-        android:id="@+id/btnLogin" />
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/lyRegisterContent">
+        <EditText
+            style="@style/Base.Theme.EditText"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUserEmail"
+            android:hint="电子邮箱"
+            android:layout_marginTop="13dp" />
+        <EditText
+            style="@style/Base.Theme.EditText"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtUserRegisterPassWord"
+            android:hint="密码"
+            android:layout_marginTop="-8dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout1"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:text="创建账户，表示你同意"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView3"
+                android:textColor="@color/gray_color"
+                android:textSize="13dp" />
+            <TextView
+                android:text="@string/TermsofServiceText"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/txtTermsofService"
+                android:textColor="@color/gray_color"
+                android:textSize="13dp" />
+            <TextView
+                android:text="和"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView5"
+                android:textColor="@color/gray_color"
+                android:textSize="13dp" />
+            <TextView
+                android:text="@string/PrivacyPolicyText"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/txtPrivacyPolicy"
+                android:textColor="@color/gray_color"
+                android:textSize="13dp" />
+        </LinearLayout>
+        <Button
+            style="@style/Base.Theme.Button"
+            android:text="开始使用链接笔记"
+            android:layout_width="match_parent"
+            android:id="@+id/btnRegister"
+            android:layout_marginTop="10dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lyToLogin"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:text="已经拥有账号？"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView6" />
+            <TextView
+                android:text="登录"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/textView7"
+                android:textColor="@color/base_color" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
