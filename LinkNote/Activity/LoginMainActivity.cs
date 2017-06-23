@@ -26,7 +26,7 @@ namespace LinkNote.Activity
     [Activity(Label = "LoginMainActivity")]
     public class LoginMainActivity : AppCompatActivity
     {
-        LoginMainActivity _context;
+        public static LoginMainActivity _context;
         public RelativeLayout header;
         LinkNoteViewPager vpBody;
         int fragmentIndex = 0;
@@ -116,6 +116,12 @@ namespace LinkNote.Activity
             bool check = true;
             btnLogin.Click += delegate
             {
+                if (!new NetworkState(this).Check())
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.LoginErrorTitle,
+                        Resource.String.NetworkStateErrorMessage, null);
+                    return;
+                }
                 EditText txtUserName = (EditText)secondView.FindViewById(Resource.Id.txtUserName);
                 EditText txtUserPassWord = (EditText)secondView.FindViewById(Resource.Id.txtUserPassWord);
                 if (txtUserName.Text == "")
@@ -131,6 +137,9 @@ namespace LinkNote.Activity
                 else
                 {
                     // 验证用户名和密码
+                    Intent intentMain = new Intent();
+                    intentMain.SetClass(this, typeof(MainActivity));
+                    StartActivity(intentMain);
                 }
             };
             lyCreateAccount.Click += delegate
@@ -143,6 +152,10 @@ namespace LinkNote.Activity
             txtForgetPassWord.Click += delegate
             {
                 // 跳转忘记密码页面
+                Intent intentForgetPassWord = new Intent();
+                intentForgetPassWord.SetClass(this, typeof(ForgetPassWordActivity));
+                StartActivity(intentForgetPassWord);
+                OverridePendingTransition(Resource.Animation.abc_fade_in, Resource.Animation.abc_fade_out); // 淡入淡出效果
             };
             TextView txtChangeVersion = (TextView)secondView.FindViewById(Resource.Id.txtChangeVersion);
             txtChangeVersion.Click += delegate
@@ -169,6 +182,12 @@ namespace LinkNote.Activity
             Button btnRegister = (Button)secondView.FindViewById(Resource.Id.btnRegister);
             btnRegister.Click += delegate
             {
+                if (!new NetworkState(this).Check())
+                {
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.LoginErrorTitle,
+                        Resource.String.NetworkStateErrorMessage, null);
+                    return;
+                }
                 EditText txtUserEmail = (EditText)secondView.FindViewById(Resource.Id.txtUserEmail);
                 EditText txtUserRegisterPassWord = (EditText)secondView.FindViewById(Resource.Id.txtUserRegisterPassWord);
                 Regex r = new Regex("^\\s*([A-Za-z0-9_-]+(\\.\\w+)*@(\\w+\\.)+\\w{2,5})\\s*$");
@@ -199,6 +218,11 @@ namespace LinkNote.Activity
             };
         }
 
+        public void ShowSnack()
+        {
+            Snackbar.Make(vpBody,
+                Resource.String.ForgetPassWordPromptMessage, Snackbar.LengthShort).Show();
+        }
     }
     
     public class RootViewOnGlobalLayoutListener : Java.Lang.Object, ViewTreeObserver.IOnGlobalLayoutListener

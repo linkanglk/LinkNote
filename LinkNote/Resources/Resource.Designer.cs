@@ -1021,32 +1021,32 @@ namespace LinkNote
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004f
-			public const int abc_background_cache_hint_selector_material_dark = 2131492943;
-			
 			// aapt resource value: 0x7f0c0050
-			public const int abc_background_cache_hint_selector_material_light = 2131492944;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492944;
 			
 			// aapt resource value: 0x7f0c0051
-			public const int abc_color_highlight_material = 2131492945;
+			public const int abc_background_cache_hint_selector_material_light = 2131492945;
+			
+			// aapt resource value: 0x7f0c0052
+			public const int abc_color_highlight_material = 2131492946;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_disable_only_material_dark = 2131492946;
-			
 			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_disable_only_material_light = 2131492947;
+			public const int abc_primary_text_disable_only_material_dark = 2131492947;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_material_dark = 2131492948;
+			public const int abc_primary_text_disable_only_material_light = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_material_light = 2131492949;
+			public const int abc_primary_text_material_dark = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int abc_search_url_text = 2131492950;
+			public const int abc_primary_text_material_light = 2131492950;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int abc_search_url_text = 2131492951;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -1057,11 +1057,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int abc_secondary_text_material_dark = 2131492951;
-			
 			// aapt resource value: 0x7f0c0058
-			public const int abc_secondary_text_material_light = 2131492952;
+			public const int abc_secondary_text_material_dark = 2131492952;
+			
+			// aapt resource value: 0x7f0c0059
+			public const int abc_secondary_text_material_light = 2131492953;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int accent_material_dark = 2131492868;
@@ -1083,6 +1083,9 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f0c0049
 			public const int base_color = 2131492937;
+			
+			// aapt resource value: 0x7f0c004f
+			public const int black_color = 2131492943;
 			
 			// aapt resource value: 0x7f0c000a
 			public const int bright_foreground_disabled_material_dark = 2131492874;
@@ -1276,11 +1279,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_disabled_material_light = 2131492919;
 			
-			// aapt resource value: 0x7f0c0059
-			public const int switch_thumb_material_dark = 2131492953;
-			
 			// aapt resource value: 0x7f0c005a
-			public const int switch_thumb_material_light = 2131492954;
+			public const int switch_thumb_material_dark = 2131492954;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int switch_thumb_material_light = 2131492955;
 			
 			// aapt resource value: 0x7f0c0038
 			public const int switch_thumb_normal_material_dark = 2131492920;
@@ -1978,8 +1981,8 @@ namespace LinkNote
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07009d
-			public const int action0 = 2131165341;
+			// aapt resource value: 0x7f07009f
+			public const int action0 = 2131165343;
 			
 			// aapt resource value: 0x7f07005a
 			public const int action_bar = 2131165274;
@@ -2005,8 +2008,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f07005b
 			public const int action_context_bar = 2131165275;
 			
-			// aapt resource value: 0x7f0700a1
-			public const int action_divider = 2131165345;
+			// aapt resource value: 0x7f0700a3
+			public const int action_divider = 2131165347;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -2023,8 +2026,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f07003c
 			public const int action_mode_close_button = 2131165244;
 			
-			// aapt resource value: 0x7f0700ae
-			public const int action_settings = 2131165358;
+			// aapt resource value: 0x7f0700b0
+			public const int action_settings = 2131165360;
 			
 			// aapt resource value: 0x7f07003d
 			public const int activity_chooser_view_content = 2131165245;
@@ -2035,14 +2038,14 @@ namespace LinkNote
 			// aapt resource value: 0x7f07001e
 			public const int always = 2131165214;
 			
-			// aapt resource value: 0x7f070096
-			public const int appbar = 2131165334;
+			// aapt resource value: 0x7f070073
+			public const int appbar = 2131165299;
 			
-			// aapt resource value: 0x7f070099
-			public const int avatar = 2131165337;
+			// aapt resource value: 0x7f07009b
+			public const int avatar = 2131165339;
 			
-			// aapt resource value: 0x7f070098
-			public const int backdrop = 2131165336;
+			// aapt resource value: 0x7f07009a
+			public const int backdrop = 2131165338;
 			
 			// aapt resource value: 0x7f07001b
 			public const int beginning = 2131165211;
@@ -2050,20 +2053,23 @@ namespace LinkNote
 			// aapt resource value: 0x7f07002a
 			public const int bottom = 2131165226;
 			
-			// aapt resource value: 0x7f07007a
-			public const int btnContinue = 2131165306;
+			// aapt resource value: 0x7f07007e
+			public const int btnContinue = 2131165310;
 			
-			// aapt resource value: 0x7f070084
-			public const int btnLogin = 2131165316;
+			// aapt resource value: 0x7f070087
+			public const int btnLogin = 2131165319;
 			
-			// aapt resource value: 0x7f070090
-			public const int btnRegister = 2131165328;
+			// aapt resource value: 0x7f070093
+			public const int btnRegister = 2131165331;
+			
+			// aapt resource value: 0x7f070077
+			public const int btnResetPassWord = 2131165303;
 			
 			// aapt resource value: 0x7f070044
 			public const int buttonPanel = 2131165252;
 			
-			// aapt resource value: 0x7f07009e
-			public const int cancel_action = 2131165342;
+			// aapt resource value: 0x7f0700a0
+			public const int cancel_action = 2131165344;
 			
 			// aapt resource value: 0x7f07002b
 			public const int center = 2131165227;
@@ -2077,11 +2083,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f070052
 			public const int checkbox = 2131165266;
 			
-			// aapt resource value: 0x7f0700a4
-			public const int chronometer = 2131165348;
+			// aapt resource value: 0x7f0700a6
+			public const int chronometer = 2131165350;
 			
-			// aapt resource value: 0x7f07007d
-			public const int clRootActivity = 2131165309;
+			// aapt resource value: 0x7f070080
+			public const int clRootActivity = 2131165312;
 			
 			// aapt resource value: 0x7f070033
 			public const int clip_horizontal = 2131165235;
@@ -2092,8 +2098,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f07001f
 			public const int collapseActionView = 2131165215;
 			
-			// aapt resource value: 0x7f070097
-			public const int collapsing_toolbar = 2131165335;
+			// aapt resource value: 0x7f070099
+			public const int collapsing_toolbar = 2131165337;
 			
 			// aapt resource value: 0x7f07004a
 			public const int contentPanel = 2131165258;
@@ -2128,8 +2134,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f07000e
 			public const int disableHome = 2131165198;
 			
-			// aapt resource value: 0x7f070094
-			public const int drawer_layout = 2131165332;
+			// aapt resource value: 0x7f070097
+			public const int drawer_layout = 2131165335;
 			
 			// aapt resource value: 0x7f07005c
 			public const int edit_query = 2131165276;
@@ -2137,8 +2143,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
-			// aapt resource value: 0x7f0700a9
-			public const int end_padder = 2131165353;
+			// aapt resource value: 0x7f0700ab
+			public const int end_padder = 2131165355;
 			
 			// aapt resource value: 0x7f070023
 			public const int enterAlways = 2131165219;
@@ -2155,8 +2161,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f070051
 			public const int expanded_menu = 2131165265;
 			
-			// aapt resource value: 0x7f07009c
-			public const int fab = 2131165340;
+			// aapt resource value: 0x7f07009e
+			public const int fab = 2131165342;
 			
 			// aapt resource value: 0x7f070035
 			public const int fill = 2131165237;
@@ -2182,17 +2188,17 @@ namespace LinkNote
 			// aapt resource value: 0x7f070020
 			public const int ifRoom = 2131165216;
 			
-			// aapt resource value: 0x7f070081
-			public const int ilBody = 2131165313;
+			// aapt resource value: 0x7f070084
+			public const int ilBody = 2131165316;
 			
 			// aapt resource value: 0x7f07003f
 			public const int image = 2131165247;
 			
-			// aapt resource value: 0x7f070077
-			public const int imageView1 = 2131165303;
+			// aapt resource value: 0x7f07007b
+			public const int imageView1 = 2131165307;
 			
-			// aapt resource value: 0x7f0700a8
-			public const int info = 2131165352;
+			// aapt resource value: 0x7f0700aa
+			public const int info = 2131165354;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -2200,14 +2206,14 @@ namespace LinkNote
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
 			
-			// aapt resource value: 0x7f0700a2
-			public const int line1 = 2131165346;
+			// aapt resource value: 0x7f0700a4
+			public const int line1 = 2131165348;
 			
-			// aapt resource value: 0x7f0700a6
-			public const int line3 = 2131165350;
+			// aapt resource value: 0x7f0700a8
+			public const int line3 = 2131165352;
 			
-			// aapt resource value: 0x7f07007b
-			public const int linearLayout1 = 2131165307;
+			// aapt resource value: 0x7f07007f
+			public const int linearLayout1 = 2131165311;
 			
 			// aapt resource value: 0x7f07000b
 			public const int listMode = 2131165195;
@@ -2215,29 +2221,29 @@ namespace LinkNote
 			// aapt resource value: 0x7f070041
 			public const int list_item = 2131165249;
 			
-			// aapt resource value: 0x7f07007e
-			public const int lyActivityRoot = 2131165310;
+			// aapt resource value: 0x7f070081
+			public const int lyActivityRoot = 2131165313;
 			
-			// aapt resource value: 0x7f070087
-			public const int lyCreateAccount = 2131165319;
-			
-			// aapt resource value: 0x7f07007f
-			public const int lyHeader = 2131165311;
+			// aapt resource value: 0x7f07008a
+			public const int lyCreateAccount = 2131165322;
 			
 			// aapt resource value: 0x7f070082
-			public const int lyLoginContent = 2131165314;
+			public const int lyHeader = 2131165314;
 			
-			// aapt resource value: 0x7f070089
-			public const int lyRegisterContent = 2131165321;
+			// aapt resource value: 0x7f070085
+			public const int lyLoginContent = 2131165317;
 			
-			// aapt resource value: 0x7f070091
-			public const int lyToLogin = 2131165329;
+			// aapt resource value: 0x7f07008c
+			public const int lyRegisterContent = 2131165324;
+			
+			// aapt resource value: 0x7f070094
+			public const int lyToLogin = 2131165332;
 			
 			// aapt resource value: 0x7f070072
 			public const int main_content = 2131165298;
 			
-			// aapt resource value: 0x7f0700a0
-			public const int media_actions = 2131165344;
+			// aapt resource value: 0x7f0700a2
+			public const int media_actions = 2131165346;
 			
 			// aapt resource value: 0x7f07001d
 			public const int middle = 2131165213;
@@ -2248,20 +2254,20 @@ namespace LinkNote
 			// aapt resource value: 0x7f070016
 			public const int multiply = 2131165206;
 			
-			// aapt resource value: 0x7f0700ad
-			public const int nav_discussion = 2131165357;
+			// aapt resource value: 0x7f0700af
+			public const int nav_discussion = 2131165359;
+			
+			// aapt resource value: 0x7f0700ae
+			public const int nav_friends = 2131165358;
 			
 			// aapt resource value: 0x7f0700ac
-			public const int nav_friends = 2131165356;
+			public const int nav_home = 2131165356;
 			
-			// aapt resource value: 0x7f0700aa
-			public const int nav_home = 2131165354;
+			// aapt resource value: 0x7f0700ad
+			public const int nav_messages = 2131165357;
 			
-			// aapt resource value: 0x7f0700ab
-			public const int nav_messages = 2131165355;
-			
-			// aapt resource value: 0x7f070095
-			public const int nav_view = 2131165333;
+			// aapt resource value: 0x7f070098
+			public const int nav_view = 2131165336;
 			
 			// aapt resource value: 0x7f07006d
 			public const int navigation_header_container = 2131165293;
@@ -2281,8 +2287,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f070046
 			public const int parentPanel = 2131165254;
 			
-			// aapt resource value: 0x7f070076
-			public const int pbLoading = 2131165302;
+			// aapt resource value: 0x7f07007a
+			public const int pbLoading = 2131165306;
 			
 			// aapt resource value: 0x7f070029
 			public const int pin = 2131165225;
@@ -2296,14 +2302,14 @@ namespace LinkNote
 			// aapt resource value: 0x7f070054
 			public const int radio = 2131165268;
 			
-			// aapt resource value: 0x7f070074
-			public const int recyclerview = 2131165300;
+			// aapt resource value: 0x7f070078
+			public const int recyclerview = 2131165304;
 			
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
 			
-			// aapt resource value: 0x7f070075
-			public const int rlyBody = 2131165301;
+			// aapt resource value: 0x7f070079
+			public const int rlyBody = 2131165305;
 			
 			// aapt resource value: 0x7f070017
 			public const int screen = 2131165207;
@@ -2395,8 +2401,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f070031
 			public const int start = 2131165233;
 			
-			// aapt resource value: 0x7f07009f
-			public const int status_bar_latest_event_content = 2131165343;
+			// aapt resource value: 0x7f0700a1
+			public const int status_bar_latest_event_content = 2131165345;
 			
 			// aapt resource value: 0x7f070065
 			public const int submit_area = 2131165285;
@@ -2404,38 +2410,38 @@ namespace LinkNote
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f07009a
-			public const int tabs = 2131165338;
+			// aapt resource value: 0x7f07009c
+			public const int tabs = 2131165340;
+			
+			// aapt resource value: 0x7f0700a9
+			public const int text = 2131165353;
 			
 			// aapt resource value: 0x7f0700a7
-			public const int text = 2131165351;
-			
-			// aapt resource value: 0x7f0700a5
-			public const int text2 = 2131165349;
+			public const int text2 = 2131165351;
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
 			
-			// aapt resource value: 0x7f07007c
-			public const int textView1 = 2131165308;
+			// aapt resource value: 0x7f070075
+			public const int textView1 = 2131165301;
 			
-			// aapt resource value: 0x7f070088
-			public const int textView2 = 2131165320;
+			// aapt resource value: 0x7f07008b
+			public const int textView2 = 2131165323;
 			
-			// aapt resource value: 0x7f07008c
-			public const int textView3 = 2131165324;
+			// aapt resource value: 0x7f07008f
+			public const int textView3 = 2131165327;
 			
-			// aapt resource value: 0x7f07008e
-			public const int textView5 = 2131165326;
+			// aapt resource value: 0x7f070091
+			public const int textView5 = 2131165329;
 			
-			// aapt resource value: 0x7f070092
-			public const int textView6 = 2131165330;
+			// aapt resource value: 0x7f070095
+			public const int textView6 = 2131165333;
 			
-			// aapt resource value: 0x7f070093
-			public const int textView7 = 2131165331;
+			// aapt resource value: 0x7f070096
+			public const int textView7 = 2131165334;
 			
-			// aapt resource value: 0x7f0700a3
-			public const int time = 2131165347;
+			// aapt resource value: 0x7f0700a5
+			public const int time = 2131165349;
 			
 			// aapt resource value: 0x7f070043
 			public const int title = 2131165251;
@@ -2443,8 +2449,8 @@ namespace LinkNote
 			// aapt resource value: 0x7f070048
 			public const int title_template = 2131165256;
 			
-			// aapt resource value: 0x7f070073
-			public const int toolbar = 2131165299;
+			// aapt resource value: 0x7f070074
+			public const int toolbar = 2131165300;
 			
 			// aapt resource value: 0x7f070032
 			public const int top = 2131165234;
@@ -2455,29 +2461,32 @@ namespace LinkNote
 			// aapt resource value: 0x7f070069
 			public const int touch_outside = 2131165289;
 			
-			// aapt resource value: 0x7f070085
-			public const int txtChangeVersion = 2131165317;
+			// aapt resource value: 0x7f070088
+			public const int txtChangeVersion = 2131165320;
 			
-			// aapt resource value: 0x7f070086
-			public const int txtForgetPassWord = 2131165318;
+			// aapt resource value: 0x7f070076
+			public const int txtEmailAddress = 2131165302;
 			
-			// aapt resource value: 0x7f07008f
-			public const int txtPrivacyPolicy = 2131165327;
+			// aapt resource value: 0x7f070089
+			public const int txtForgetPassWord = 2131165321;
+			
+			// aapt resource value: 0x7f070092
+			public const int txtPrivacyPolicy = 2131165330;
+			
+			// aapt resource value: 0x7f070090
+			public const int txtTermsofService = 2131165328;
 			
 			// aapt resource value: 0x7f07008d
-			public const int txtTermsofService = 2131165325;
+			public const int txtUserEmail = 2131165325;
 			
-			// aapt resource value: 0x7f07008a
-			public const int txtUserEmail = 2131165322;
+			// aapt resource value: 0x7f07007d
+			public const int txtUserName = 2131165309;
 			
-			// aapt resource value: 0x7f070079
-			public const int txtUserName = 2131165305;
+			// aapt resource value: 0x7f070086
+			public const int txtUserPassWord = 2131165318;
 			
-			// aapt resource value: 0x7f070083
-			public const int txtUserPassWord = 2131165315;
-			
-			// aapt resource value: 0x7f07008b
-			public const int txtUserRegisterPassWord = 2131165323;
+			// aapt resource value: 0x7f07008e
+			public const int txtUserRegisterPassWord = 2131165326;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
@@ -2485,17 +2494,17 @@ namespace LinkNote
 			// aapt resource value: 0x7f070014
 			public const int useLogo = 2131165204;
 			
-			// aapt resource value: 0x7f070080
-			public const int view1 = 2131165312;
+			// aapt resource value: 0x7f070083
+			public const int view1 = 2131165315;
 			
 			// aapt resource value: 0x7f07000a
 			public const int view_offset_helper = 2131165194;
 			
-			// aapt resource value: 0x7f07009b
-			public const int viewpager = 2131165339;
+			// aapt resource value: 0x7f07009d
+			public const int viewpager = 2131165341;
 			
-			// aapt resource value: 0x7f070078
-			public const int vpBody = 2131165304;
+			// aapt resource value: 0x7f07007c
+			public const int vpBody = 2131165308;
 			
 			// aapt resource value: 0x7f070022
 			public const int withText = 2131165218;
@@ -2786,6 +2795,18 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f080017
 			public const int ApplicationName = 2131230743;
+			
+			// aapt resource value: 0x7f08002a
+			public const int ForgetPassWordActionBarTitle = 2131230762;
+			
+			// aapt resource value: 0x7f08002c
+			public const int ForgetPassWordButtonText = 2131230764;
+			
+			// aapt resource value: 0x7f08002b
+			public const int ForgetPassWordContentMessage = 2131230763;
+			
+			// aapt resource value: 0x7f08002d
+			public const int ForgetPassWordPromptMessage = 2131230765;
 			
 			// aapt resource value: 0x7f080028
 			public const int LoginChangeInternational = 2131230760;
