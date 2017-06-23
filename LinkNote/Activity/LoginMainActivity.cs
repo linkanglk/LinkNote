@@ -13,11 +13,17 @@ using Android.Support.Design.Widget;
 using Android.Graphics;
 using Android.Util;
 using LinkNote.OtherClass;
+using Java.Lang;
+using System.Collections;
+using LinkNote.ViewPager;
+using LinkNote.Adapter.ViewPagerAdapter;
+using Android.Support.V7.App;
+using LinkNote.Fragment;
 
 namespace LinkNote.Activity
 {
     [Activity(Label = "LoginMainActivity")]
-    public class LoginMainActivity : Android.App.Activity
+    public class LoginMainActivity : AppCompatActivity
     {
         LoginMainActivity _context;
         public RelativeLayout header;
@@ -37,6 +43,7 @@ namespace LinkNote.Activity
                 contentHeight = totalHeight - statusBarHeight;
             }
             header = (RelativeLayout)FindViewById(Resource.Id.lyHeader);
+            FindViewById(Resource.Id.ilBody);
             InitView(); // 初始化页面
         }
 
@@ -45,24 +52,50 @@ namespace LinkNote.Activity
             CoordinatorLayout rootView = (CoordinatorLayout)FindViewById(Resource.Id.clRootActivity);
             rootView.ViewTreeObserver.AddOnGlobalLayoutListener(new RootViewOnGlobalLayoutListener(rootView, _context));
 
-            Button btnContinue = (Button)FindViewById(Resource.Id.btnContinue); // 继续按钮
-            btnContinue.Click += BtnContinue_Click; // 继续按钮点击事件
+            LinkNoteViewPager vpBody =(LinkNoteViewPager)FindViewById(Resource.Id.vpBody);
+            if (vpBody != null)
+                SetViewPageBodyAdapter(vpBody);
+
+            //Button btnContinue = (Button)FindViewById(Resource.Id.btnContinue); // 继续按钮
+            //btnContinue.Click += BtnContinue_Click; // 继续按钮点击事件
         }
 
         private void BtnContinue_Click(object sender, EventArgs e)
         {
             EditText txtUserName = (EditText)FindViewById(Resource.Id.txtUserName);
-            if (txtUserName.Text == "")
+            // 判断网络状态
+            if (new NetworkState(this).Check())
             {
-                new AlertDialog.Builder(this).SetTitle("登录错误")
-                    .SetMessage("输入的电子邮件有误。请再试一次。").SetNegativeButton("好", delegate
-                    {
-
-                    }).Show();
+                if (txtUserName.Text == "")
+                {
+                    new LinkNoteAlertDialog(this)
+                        .CreateShow(Resource.String.LoginErrorTitle,
+                        Resource.String.LoginNameErrorMessage, null);
+                }
+                else
+                {
+                    Intent mainIntent = new Intent();
+                    mainIntent.SetClass(this, typeof(MainActivity));
+                    StartActivity(mainIntent);
+                }
+            }
+            else
+            {
+                new LinkNoteAlertDialog(this)
+                    .CreateShow(Resource.String.LoginErrorTitle,
+                    Resource.String.NetworkStateErrorMessage, null);
             }
         }
-    }
 
+        private void SetViewPageBodyAdapter(LinkNoteViewPager vpBody)
+        {
+            LinkNoteViewPageAdapter adapter = new LinkNoteViewPageAdapter(SupportFragmentManager);
+            adapter.AddFragment(new LoginFristStepFragment());
+            adapter.AddFragment(new LoginSecondStepFragment());
+            vpBody.Adapter = adapter;
+        }
+    }
+    
     public class RootViewOnGlobalLayoutListener : Java.Lang.Object, ViewTreeObserver.IOnGlobalLayoutListener
     {
         CoordinatorLayout rootView;

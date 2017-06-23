@@ -4,4 +4,27 @@
     android:layout_height="match_parent"
     android:background="@color/base_color"
     android:minWidth="25px"
-    android:minHeight="25px" />
+    android:minHeight="25px">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:id="@+id/linearLayout1"
+        android:layout_centerInParent="true"
+        android:paddingTop="11dp">
+        <ImageView
+            android:src="@drawable/login_header_bg"
+            android:layout_width="203dp"
+            android:layout_height="163dp"
+            android:id="@+id/imageView1"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:text="完美一体的工作空间，记录和收集一切重要信息。"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+</RelativeLayout>

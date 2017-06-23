@@ -3,19 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
     android:background="@color/white_color">
-    <EditText
-        style="@style/Base.Theme.EditText"
-        android:inputType="textEmailAddress"
+    <LinkNote.ViewPager.LinkNoteViewPager
+        android:id="@+id/vpBody"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtUserName"
-        android:hint="电子邮箱或用户名" />
-    <Button
-        style="@style/Base.Theme.Button"
-        android:text="继续"
-        android:layout_width="match_parent"
-        android:id="@+id/btnContinue" />
+        android:layout_height="match_parent" />
 </LinearLayout>
