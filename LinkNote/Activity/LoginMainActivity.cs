@@ -184,7 +184,7 @@ namespace LinkNote.Activity
             {
                 if (!new NetworkState(this).Check())
                 {
-                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.LoginErrorTitle,
+                    new LinkNoteAlertDialog(this).CreateShow(Resource.String.RegisterErrorTitle,
                         Resource.String.NetworkStateErrorMessage, null);
                     return;
                 }
