@@ -1965,8 +1965,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f020063
 			public const int logo = 2130837603;
 			
+			// aapt resource value: 0x7f020065
+			public const int notification_template_icon_bg = 2130837605;
+			
 			// aapt resource value: 0x7f020064
-			public const int notification_template_icon_bg = 2130837604;
+			public const int password_display = 2130837604;
 			
 			static Drawable()
 			{
@@ -2255,16 +2258,16 @@ namespace LinkNote
 			public const int multiply = 2131165206;
 			
 			// aapt resource value: 0x7f0700af
-			public const int nav_discussion = 2131165359;
-			
-			// aapt resource value: 0x7f0700ae
-			public const int nav_friends = 2131165358;
+			public const int nav_friends = 2131165359;
 			
 			// aapt resource value: 0x7f0700ac
 			public const int nav_home = 2131165356;
 			
 			// aapt resource value: 0x7f0700ad
 			public const int nav_messages = 2131165357;
+			
+			// aapt resource value: 0x7f0700ae
+			public const int nav_share = 2131165358;
 			
 			// aapt resource value: 0x7f070098
 			public const int nav_view = 2131165336;
@@ -2804,6 +2807,12 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f08002b
 			public const int ForgetPassWordContentMessage = 2131230763;
+			
+			// aapt resource value: 0x7f08002f
+			public const int ForgetPassWordEmailNullMessage = 2131230767;
+			
+			// aapt resource value: 0x7f08002e
+			public const int ForgetPassWordEmailTitle = 2131230766;
 			
 			// aapt resource value: 0x7f08002d
 			public const int ForgetPassWordPromptMessage = 2131230765;

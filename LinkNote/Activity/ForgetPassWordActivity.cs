@@ -1,20 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
-using Android.Transitions;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
-using Android.Support.Design.Widget;
 using LinkNote.OtherClass;
-using Android.Graphics;
 
 namespace LinkNote.Activity
 {
@@ -40,6 +31,13 @@ namespace LinkNote.Activity
 
         private void BtnResetPassWord_Click(object sender, EventArgs e)
         {
+            EditText txtEmailAddress = (EditText)FindViewById(Resource.Id.txtEmailAddress);
+            if (txtEmailAddress.Text == "")
+            {
+                new LinkNoteAlertDialog(this).CreateShow(Resource.String.ForgetPassWordEmailTitle,
+                    Resource.String.ForgetPassWordEmailNullMessage, null);
+                return;
+            }
             LoginMainActivity._context.ShowSnack();
             Finish();
             OverridePendingTransition(Resource.Animation.abc_fade_in, Resource.Animation.abc_fade_out); // 淡入淡出效果

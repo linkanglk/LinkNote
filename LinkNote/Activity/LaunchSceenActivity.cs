@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Transitions;
 using LinkNote.Activity;
 
 /// <summary>
@@ -18,7 +9,7 @@ using LinkNote.Activity;
 
 namespace LinkNote.Activitys
 {
-    [Activity(Label = "LinkNote", Icon = "@drawable/icon", MainLauncher = true, Theme = "@style/LaunchScreen")]
+    [Activity(Label = "链接笔记", Icon = "@drawable/icon", MainLauncher = true, Theme = "@style/LaunchScreen")]
     public class LaunchSceenActivity : Android.App.Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

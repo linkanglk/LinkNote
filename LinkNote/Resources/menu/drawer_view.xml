@@ -19,28 +19,26 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_dashboard"
+        android:textSize="20dp"
         android:title="所有笔记" />
     <item
         android:id="@+id/nav_messages"
         android:icon="@drawable/ic_event"
+        android:textSize="20dp"
         android:title="笔记本" />
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_forum"
+        android:title="已共享" />
     <item
         android:id="@+id/nav_friends"
         android:icon="@drawable/ic_headset"
         android:title="工作群聊" />
     <item
-        android:id="@+id/nav_discussion"
+        android:icon="@drawable/ic_dashboard"
+        android:title="探索链接笔记" />
+    <item
         android:icon="@drawable/ic_forum"
-        android:title="废纸篓" />
+        android:title="设置" />
   </group>
-  <item android:title="Sub items">
-    <menu>
-      <item
-          android:icon="@drawable/ic_dashboard"
-          android:title="Sub item 1" />
-      <item
-          android:icon="@drawable/ic_forum"
-          android:title="Sub item 2" />
-    </menu>
-  </item>
 </menu>

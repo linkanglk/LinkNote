@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.Design.Widget;
 using Android.Graphics;
 using Android.Util;
 using LinkNote.OtherClass;
-using Java.Lang;
-using System.Collections;
 using LinkNote.ViewPager;
 using LinkNote.Adapter.ViewPagerAdapter;
 using Android.Support.V7.App;

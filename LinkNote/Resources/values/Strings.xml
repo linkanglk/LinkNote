@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ApplicationName">LinkNote</string>
+    <string name="ApplicationName">链接笔记</string>
     <string name="cheese_ipsum">
       Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
       cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
@@ -34,4 +34,6 @@
   <string name="ForgetPassWordContentMessage">没有密码？我们将向您的邮箱发送重置密码说明。</string>
   <string name="ForgetPassWordButtonText">重设密码</string>
   <string name="ForgetPassWordPromptMessage">已发送密码重设指令邮件到你的电子邮箱。</string>
+  <string name="ForgetPassWordEmailTitle">忘记密码错误</string>
+  <string name="ForgetPassWordEmailNullMessage">无效的用户名或密码。请再试一次。</string>
 </resources>
