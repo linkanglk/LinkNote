@@ -8,4 +8,5 @@
   <color name="white_color">#ffffff</color>
   <color name="gray_color">#B0AEAD</color>
   <color name="black_color">#000000</color>
+  <color name="menu_color">#1F1F1F</color><!-- 抽屉菜单字体颜色 -->
 </resources>

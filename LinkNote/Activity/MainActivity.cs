@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using LinkNote.Fragment;
 using Android.Views;
 using System;
+using Android.Content.Res;
+using Android.Graphics;
 
 namespace LinkNote
 {
@@ -70,6 +72,13 @@ namespace LinkNote
 
         void setupDrawerContent(NavigationView navigationView)
         {
+            Resources resource = (Resources)BaseContext.Resources;
+            ColorStateList csl = resource.GetColorStateList(Resource.Color.navigation_menu_item_color);
+            navigationView.ItemTextColor = csl;
+
+            Typeface typeface = Typeface.CreateFromAsset(Assets, "fonts/msyhbd.ttc");
+            //navigationView.
+
             navigationView.NavigationItemSelected += (sender, e) => {
                 e.MenuItem.SetChecked(true);
                 drawerLayout.CloseDrawers();

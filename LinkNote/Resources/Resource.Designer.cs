@@ -1021,32 +1021,32 @@ namespace LinkNote
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c0050
-			public const int abc_background_cache_hint_selector_material_dark = 2131492944;
-			
 			// aapt resource value: 0x7f0c0051
-			public const int abc_background_cache_hint_selector_material_light = 2131492945;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492945;
 			
 			// aapt resource value: 0x7f0c0052
-			public const int abc_color_highlight_material = 2131492946;
+			public const int abc_background_cache_hint_selector_material_light = 2131492946;
+			
+			// aapt resource value: 0x7f0c0053
+			public const int abc_color_highlight_material = 2131492947;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_disable_only_material_dark = 2131492947;
-			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_disable_only_material_light = 2131492948;
+			public const int abc_primary_text_disable_only_material_dark = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_material_dark = 2131492949;
+			public const int abc_primary_text_disable_only_material_light = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int abc_primary_text_material_light = 2131492950;
+			public const int abc_primary_text_material_dark = 2131492950;
 			
 			// aapt resource value: 0x7f0c0057
-			public const int abc_search_url_text = 2131492951;
+			public const int abc_primary_text_material_light = 2131492951;
+			
+			// aapt resource value: 0x7f0c0058
+			public const int abc_search_url_text = 2131492952;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -1057,11 +1057,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0058
-			public const int abc_secondary_text_material_dark = 2131492952;
-			
 			// aapt resource value: 0x7f0c0059
-			public const int abc_secondary_text_material_light = 2131492953;
+			public const int abc_secondary_text_material_dark = 2131492953;
+			
+			// aapt resource value: 0x7f0c005a
+			public const int abc_secondary_text_material_light = 2131492954;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int accent_material_dark = 2131492868;
@@ -1228,6 +1228,12 @@ namespace LinkNote
 			// aapt resource value: 0x7f0c0027
 			public const int material_grey_900 = 2131492903;
 			
+			// aapt resource value: 0x7f0c0050
+			public const int menu_color = 2131492944;
+			
+			// aapt resource value: 0x7f0c005b
+			public const int navigation_menu_item_color = 2131492955;
+			
 			// aapt resource value: 0x7f0c0028
 			public const int primary_dark_material_dark = 2131492904;
 			
@@ -1279,11 +1285,11 @@ namespace LinkNote
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_disabled_material_light = 2131492919;
 			
-			// aapt resource value: 0x7f0c005a
-			public const int switch_thumb_material_dark = 2131492954;
+			// aapt resource value: 0x7f0c005c
+			public const int switch_thumb_material_dark = 2131492956;
 			
-			// aapt resource value: 0x7f0c005b
-			public const int switch_thumb_material_light = 2131492955;
+			// aapt resource value: 0x7f0c005d
+			public const int switch_thumb_material_light = 2131492957;
 			
 			// aapt resource value: 0x7f0c0038
 			public const int switch_thumb_normal_material_dark = 2131492920;
@@ -1957,19 +1963,22 @@ namespace LinkNote
 			public const int ic_menu = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int Icon = 2130837601;
+			public const int ic_update = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int login_header_bg = 2130837602;
+			public const int Icon = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int logo = 2130837603;
-			
-			// aapt resource value: 0x7f020065
-			public const int notification_template_icon_bg = 2130837605;
+			public const int login_header_bg = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int password_display = 2130837604;
+			public const int logo = 2130837604;
+			
+			// aapt resource value: 0x7f020066
+			public const int notification_template_icon_bg = 2130837606;
+			
+			// aapt resource value: 0x7f020065
+			public const int upgrade = 2130837605;
 			
 			static Drawable()
 			{
@@ -3423,6 +3432,9 @@ namespace LinkNote
 			
 			// aapt resource value: 0x7f0a015c
 			public const int LaunchScreen = 2131362140;
+			
+			// aapt resource value: 0x7f0a0162
+			public const int NavigationViewStyle = 2131362146;
 			
 			// aapt resource value: 0x7f0a0017
 			public const int Platform_AppCompat = 2131361815;
