@@ -36,4 +36,17 @@
   <string name="ForgetPassWordPromptMessage">已发送密码重设指令邮件到你的电子邮箱。</string>
   <string name="ForgetPassWordEmailTitle">忘记密码错误</string>
   <string name="ForgetPassWordEmailNullMessage">无效的用户名或密码。请再试一次。</string>
+
+    <!-- drawer_menu_text-->
+    <string name="drawer_menu_home">所有笔记</string>
+    <string name="drawer_menu_rank">笔记本</string>
+    <string name="drawer_menu_column">已共享</string>
+    <string name="drawer_menu_search">工作群聊</string>
+    <string name="drawer_menu_trash">废纸篓</string>
+    <string name="drawer_menu_night">探索链接笔记</string>
+    <string name="drawer_menu_setting">设置</string>
+
+
+  <string name="drawer_menu_upgrade">升级账号</string>
+  <string name="drawer_menu_synchronize">开始同步</string>
 </resources>

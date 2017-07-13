@@ -12,18 +12,37 @@ using Android.Views;
 using System;
 using Android.Content.Res;
 using Android.Graphics;
+using CheeseBind;
+using Android.Support.V7.Widget;
+using LinkNote.Adapter.CustomizeNavigationViewAdapter;
+using LinkNote.Model.CustomizeNavigationView;
+using Android.Support.V4.View;
+using Android.Content;
+using Android.Util;
 
 namespace LinkNote
 {
     [Activity(Label = "LinkNote")]
     public class MainActivity : AppCompatActivity
     {
-        DrawerLayout drawerLayout;
+        // 抽屉菜单对象
+        [BindView(Resource.Id.nav_view)]
+        RecyclerView navigationView;
+        // 外层DrawerLayout对象
+        [BindView(Resource.Id.drawer_layout)]
+        DrawerLayout drawerlayout;
+
+        int height = 0;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
+            Cheeseknife.Bind(this);
+
+            DisplayMetrics metric = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetMetrics(metric);
+            height = metric.HeightPixels;   // 屏幕高度（像素）  
 
             var toolbar = FindViewById<V7Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
@@ -31,11 +50,7 @@ namespace LinkNote
             SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-
-            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
-            if (navigationView != null)
-                setupDrawerContent(navigationView);
+            setupDrawerContent(); // 设置抽屉菜单内容
 
             var viewPager = FindViewById<Android.Support.V4.View.ViewPager>(Resource.Id.viewpager);
             if (viewPager != null)
@@ -48,7 +63,6 @@ namespace LinkNote
                         Console.WriteLine("Action handler");
                     })).Show();
             };
-
             var tabLayout = FindViewById<TabLayout>(Resource.Id.tabs);
             tabLayout.SetupWithViewPager(viewPager);
         }
@@ -64,25 +78,38 @@ namespace LinkNote
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    drawerLayout.OpenDrawer(Android.Support.V4.View.GravityCompat.Start);
+                    drawerlayout.OpenDrawer(GravityCompat.Start);
                     return true;
             }
             return base.OnOptionsItemSelected(item);
         }
 
-        void setupDrawerContent(NavigationView navigationView)
+        void setupDrawerContent()
         {
-            Resources resource = (Resources)BaseContext.Resources;
-            ColorStateList csl = resource.GetColorStateList(Resource.Color.navigation_menu_item_color);
-            navigationView.ItemTextColor = csl;
+            //Resources resource = (Resources)BaseContext.Resources;
+            //ColorStateList csl = resource.GetColorStateList(Resource.Color.navigation_menu_item_color);
 
-            Typeface typeface = Typeface.CreateFromAsset(Assets, "fonts/msyhbd.ttc");
-            //navigationView.
+            ListViewAdapter listViewAdapter = new ListViewAdapter(this);
+            //drawerAdapter.SetOnItemClickListener(new MyOnItemClickListener(drawerlayout));
 
-            navigationView.NavigationItemSelected += (sender, e) => {
-                e.MenuItem.SetChecked(true);
-                drawerLayout.CloseDrawers();
+            List<MenuDrawerItem> dateList = new List<MenuDrawerItem>() {
+                new MenuDrawerItemContent(listViewAdapter),
+                new MenuDrawerItemDivider(),
+                new MenuDrawerItemUpgrade(Resource.Drawable.upgrade,Resource.String.drawer_menu_upgrade),
+                new MenuDrawerItemDivider(),
+                new MenuDrawerItemSynchronize(Resource.Drawable.ic_update,Resource.String.drawer_menu_synchronize)
             };
+
+            MenuDrawerAdapter menuDrawerAdapter = new MenuDrawerAdapter(dateList,height);
+            menuDrawerAdapter.SetOnItemClickListener(new UpgradeOnItemClickListener());
+            menuDrawerAdapter.SetSynchronizeOnItemClickListener(new SynchronizeOnItemClickListener());
+
+            CustomLinearLayoutManager linearLayoutManager = new CustomLinearLayoutManager(this);
+            linearLayoutManager.setScrollEnabled(false);
+
+            navigationView.SetLayoutManager(linearLayoutManager);
+            navigationView.SetAdapter(menuDrawerAdapter);
+            
         }
 
         void setupViewPager(Android.Support.V4.View.ViewPager viewPager)
@@ -125,6 +152,88 @@ namespace LinkNote
             }
 
         }
+
+        public class CustomLinearLayoutManager : LinearLayoutManager
+        {
+            private bool isScrollEnabled = true;
+
+            public CustomLinearLayoutManager(Context context): base(context)
+            {
+
+            }
+
+            public void setScrollEnabled(bool flag)
+            {
+                this.isScrollEnabled = flag;
+            }
+
+
+            public override bool CanScrollVertically()
+            {
+                //Similarly you can customize "canScrollHorizontally()" for managing horizontal scroll
+                return isScrollEnabled && this.CanScrollVertically();
+            }
+        }
+
+    //#region 菜单点击事件
+
+    //public class MyOnItemClickListener : DrawerAdapter.OnItemClickListener
+    //{
+    //    DrawerLayout drawerlayout;
+
+    //    public MyOnItemClickListener(DrawerLayout drawerlayout)
+    //    {
+    //        this.drawerlayout = drawerlayout;
+    //    }
+
+    //    public void itemClick(DrawerItemNormal drawerItemNormal)
+    //    {
+    //        switch (drawerItemNormal.titleRes)
+    //        {
+    //            case Resource.String.drawer_menu_home://首页
+    //                break;
+    //            case Resource.String.drawer_menu_rank://排行榜
+    //                break;
+    //            case Resource.String.drawer_menu_column://栏目
+    //                break;
+    //            case Resource.String.drawer_menu_search://搜索
+    //                break;
+    //            case Resource.String.drawer_menu_trash://垃圾箱
+    //                break;
+    //            case Resource.String.drawer_menu_night://夜间模式
+    //                break;
+    //            case Resource.String.drawer_menu_setting://设置
+    //                break;
+    //        }
+    //        drawerlayout.CloseDrawer(GravityCompat.Start);
+    //    }
+    //}
+
+    //#endregion
+
+    #region 升级账号点击事件
+
+    public class UpgradeOnItemClickListener : MenuDrawerAdapter.OnItemClickListener
+        {
+            public void itemClick(MenuDrawerItemUpgrade drawerItemNormal)
+            {
+
+            }
+        }
+
+        #endregion
+
+        #region 数据同步点击事件
+
+        public class SynchronizeOnItemClickListener : MenuDrawerAdapter.OnSynchronizeItemClickListener
+        {
+            public void itemClick(MenuDrawerItemSynchronize drawerItemNormal)
+            {
+
+            }
+        }
+
+        #endregion
     }
 
     public class ClickListener : Java.Lang.Object, View.IOnClickListener

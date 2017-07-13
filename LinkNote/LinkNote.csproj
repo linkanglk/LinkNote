@@ -47,6 +47,10 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Cheeseknife, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MisterJimson.Cheeseknife.1.1.0\lib\MonoAndroid10\Cheeseknife.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
@@ -93,10 +97,13 @@
     <Compile Include="Activity\LoginMainActivity.cs" />
     <Compile Include="Activity\MainActivity.cs" />
     <Compile Include="Activity\NoteDetailActivity.cs" />
+    <Compile Include="Adapter\CustomizeNavigationViewAdapter\ListViewAdapter.cs" />
+    <Compile Include="Adapter\CustomizeNavigationViewAdapter\MenuDrawerAdapter.cs" />
     <Compile Include="Adapter\ViewPagerAdapter\LinkNoteViewPageAdapter.cs" />
     <Compile Include="Fragment\LoginFristStepFragment.cs" />
     <Compile Include="Fragment\LoginSecondStepFragment.cs" />
     <Compile Include="Fragment\NoteListFragment.cs" />
+    <Compile Include="Model\CustomizeNavigationView\DrawerItems.cs" />
     <Compile Include="OtherClass\LinkNoteAlertDialog.cs" />
     <Compile Include="OtherClass\LinkNoteLoadingDialog.cs" />
     <Compile Include="OtherClass\NetworkState.cs" />
@@ -147,6 +154,24 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ForgetPassWord.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerDivider.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerHeader.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerNormal.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerContent.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerUpgrade.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomizeNavigationViewItemDrawerSynchronize.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

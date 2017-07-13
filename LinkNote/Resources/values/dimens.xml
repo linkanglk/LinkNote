@@ -4,4 +4,21 @@
   <dimen name="card_margin">16dp</dimen>
   <dimen name="fab_margin">16dp</dimen>
   <dimen name="list_item_avatar_size">40dp</dimen>
+
+  <!-- drawerlayoutsize-->
+  <dimen name="drawer_width">300dp</dimen>
+  <dimen name="drawer_header_height">140dp</dimen>
+  <dimen name="drawer_header_icon_size">50dp</dimen>
+  <dimen name="drawer_item_icon_size">23dp</dimen>
+  <dimen name="drawer_item_height">55dp</dimen>
+  <dimen name="drawer_bottom_item_height">47dp</dimen>
+  <dimen name="drawer_item_icon_leftmargin">14dp</dimen>
+  <dimen name="drawer_item_text_leftmargin">38dp</dimen>
+  <dimen name="drawer_list_height">400dp</dimen>
+  
+  <!-- 字体大小 -->
+  <dimen name="text_micro">12sp</dimen>
+  <dimen name="text_small">14sp</dimen>
+  <dimen name="text_medium">16sp</dimen>
+  <dimen name="text_large">20sp</dimen>
 </resources>
