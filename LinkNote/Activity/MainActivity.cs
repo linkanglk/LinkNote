@@ -57,14 +57,16 @@ namespace LinkNote
                 setupViewPager(viewPager);
 
             var fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += (sender, e) => {
+            fab.Click += (sender, e) =>
+            {
                 Snackbar.Make(fab, "Here's a snackbar!", Snackbar.LengthLong).SetAction("Action",
-                    new ClickListener(v => {
+                    new ClickListener(v =>
+                    {
                         Console.WriteLine("Action handler");
                     })).Show();
             };
             var tabLayout = FindViewById<TabLayout>(Resource.Id.tabs);
-            tabLayout.SetupWithViewPager(viewPager);
+            //tabLayout.SetupWithViewPager(viewPager);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -86,21 +88,11 @@ namespace LinkNote
 
         void setupDrawerContent()
         {
-            //Resources resource = (Resources)BaseContext.Resources;
-            //ColorStateList csl = resource.GetColorStateList(Resource.Color.navigation_menu_item_color);
-
             ListViewAdapter listViewAdapter = new ListViewAdapter(this);
-            //drawerAdapter.SetOnItemClickListener(new MyOnItemClickListener(drawerlayout));
-
             List<MenuDrawerItem> dateList = new List<MenuDrawerItem>() {
-                new MenuDrawerItemContent(listViewAdapter),
-                new MenuDrawerItemDivider(),
-                new MenuDrawerItemUpgrade(Resource.Drawable.upgrade,Resource.String.drawer_menu_upgrade),
-                new MenuDrawerItemDivider(),
-                new MenuDrawerItemSynchronize(Resource.Drawable.ic_update,Resource.String.drawer_menu_synchronize)
+                new MenuDrawerItemBody(listViewAdapter)
             };
-
-            MenuDrawerAdapter menuDrawerAdapter = new MenuDrawerAdapter(dateList,height);
+            MenuDrawerAdapter menuDrawerAdapter = new MenuDrawerAdapter(dateList, height);
             menuDrawerAdapter.SetOnItemClickListener(new UpgradeOnItemClickListener());
             menuDrawerAdapter.SetSynchronizeOnItemClickListener(new SynchronizeOnItemClickListener());
 
@@ -109,7 +101,7 @@ namespace LinkNote
 
             navigationView.SetLayoutManager(linearLayoutManager);
             navigationView.SetAdapter(menuDrawerAdapter);
-            
+
         }
 
         void setupViewPager(Android.Support.V4.View.ViewPager viewPager)
@@ -157,7 +149,7 @@ namespace LinkNote
         {
             private bool isScrollEnabled = true;
 
-            public CustomLinearLayoutManager(Context context): base(context)
+            public CustomLinearLayoutManager(Context context) : base(context)
             {
 
             }
@@ -175,47 +167,47 @@ namespace LinkNote
             }
         }
 
-    //#region 菜单点击事件
+        //#region 菜单点击事件
 
-    //public class MyOnItemClickListener : DrawerAdapter.OnItemClickListener
-    //{
-    //    DrawerLayout drawerlayout;
+        //public class MyOnItemClickListener : DrawerAdapter.OnItemClickListener
+        //{
+        //    DrawerLayout drawerlayout;
 
-    //    public MyOnItemClickListener(DrawerLayout drawerlayout)
-    //    {
-    //        this.drawerlayout = drawerlayout;
-    //    }
+        //    public MyOnItemClickListener(DrawerLayout drawerlayout)
+        //    {
+        //        this.drawerlayout = drawerlayout;
+        //    }
 
-    //    public void itemClick(DrawerItemNormal drawerItemNormal)
-    //    {
-    //        switch (drawerItemNormal.titleRes)
-    //        {
-    //            case Resource.String.drawer_menu_home://首页
-    //                break;
-    //            case Resource.String.drawer_menu_rank://排行榜
-    //                break;
-    //            case Resource.String.drawer_menu_column://栏目
-    //                break;
-    //            case Resource.String.drawer_menu_search://搜索
-    //                break;
-    //            case Resource.String.drawer_menu_trash://垃圾箱
-    //                break;
-    //            case Resource.String.drawer_menu_night://夜间模式
-    //                break;
-    //            case Resource.String.drawer_menu_setting://设置
-    //                break;
-    //        }
-    //        drawerlayout.CloseDrawer(GravityCompat.Start);
-    //    }
-    //}
+        //    public void itemClick(DrawerItemNormal drawerItemNormal)
+        //    {
+        //        switch (drawerItemNormal.titleRes)
+        //        {
+        //            case Resource.String.drawer_menu_home://首页
+        //                break;
+        //            case Resource.String.drawer_menu_rank://排行榜
+        //                break;
+        //            case Resource.String.drawer_menu_column://栏目
+        //                break;
+        //            case Resource.String.drawer_menu_search://搜索
+        //                break;
+        //            case Resource.String.drawer_menu_trash://垃圾箱
+        //                break;
+        //            case Resource.String.drawer_menu_night://夜间模式
+        //                break;
+        //            case Resource.String.drawer_menu_setting://设置
+        //                break;
+        //        }
+        //        drawerlayout.CloseDrawer(GravityCompat.Start);
+        //    }
+        //}
 
-    //#endregion
+        //#endregion
 
-    #region 升级账号点击事件
+        #region 升级账号点击事件
 
-    public class UpgradeOnItemClickListener : MenuDrawerAdapter.OnItemClickListener
+        public class UpgradeOnItemClickListener : MenuDrawerAdapter.OnItemClickListener
         {
-            public void itemClick(MenuDrawerItemUpgrade drawerItemNormal)
+            public void itemClick(MenuDrawerItemBody drawerItemNormal)
             {
 
             }
@@ -227,7 +219,7 @@ namespace LinkNote
 
         public class SynchronizeOnItemClickListener : MenuDrawerAdapter.OnSynchronizeItemClickListener
         {
-            public void itemClick(MenuDrawerItemSynchronize drawerItemNormal)
+            public void itemClick(MenuDrawerItemBody drawerItemNormal)
             {
 
             }

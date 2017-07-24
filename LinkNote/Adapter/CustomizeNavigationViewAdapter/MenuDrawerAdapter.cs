@@ -18,18 +18,14 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
     public class MenuDrawerAdapter : RecyclerView.Adapter
     {
 
-        const int TYPE_CONTENT = 0;
-        const int TYPE_UPGRADE = 1;
-        const int TYPE_SYNCHRONIZE = 2;
-        const int TYPE_DIVIDER = 3;
+        const int TYPE_BODY = 0;
+        const int TYPE_CONTENT = 1;
 
         private List<MenuDrawerItem> dataList;
-        int height;
 
         public MenuDrawerAdapter(List<MenuDrawerItem> dataList,int height)
         {
             this.dataList = dataList;
-            this.height = height;
         }
 
         public override int ItemCount
@@ -43,21 +39,9 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
         public override int GetItemViewType(int position)
         {
             MenuDrawerItem menuDrawerItem = dataList[position];
-            if (menuDrawerItem is MenuDrawerItemContent)
+            if (menuDrawerItem is MenuDrawerItemBody)
             {
-                return TYPE_CONTENT;
-            }
-            else if (menuDrawerItem is MenuDrawerItemUpgrade)
-            {
-                return TYPE_UPGRADE;
-            }
-            else if (menuDrawerItem is MenuDrawerItemSynchronize)
-            {
-                return TYPE_SYNCHRONIZE;
-            }
-            else if (menuDrawerItem is MenuDrawerItemDivider)
-            {
-                return TYPE_DIVIDER;
+                return TYPE_BODY;
             }
             return base.GetItemViewType(position);
         }
@@ -65,37 +49,14 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             MenuDrawerItem item = dataList[position];
-            if (holder is ContentViewHolder) // 内容
+            // 菜单主体内容
+            if (holder is BodyViewHolder)
             {
-                ContentViewHolder contentViewHolder = (ContentViewHolder)holder;
-                MenuDrawerItemContent itemContent = (MenuDrawerItemContent)item;
-                contentViewHolder.listView.Adapter = itemContent.adapter;
-
-                ViewGroup.LayoutParams lp;
-                lp = contentViewHolder.rootView.LayoutParameters;
-                lp.Height = height - 47 * 9;
-                contentViewHolder.rootView.LayoutParameters = lp;
-            }
-            else if (holder is UpgradeViewHolder) // 升级账号
-            {
-                UpgradeViewHolder upgradeViewHolder = (UpgradeViewHolder)holder;
-                MenuDrawerItemUpgrade itemUpgrade = (MenuDrawerItemUpgrade)item;
-                upgradeViewHolder.uiv.SetBackgroundResource(itemUpgrade.iconRes);
-                upgradeViewHolder.utv.SetText(itemUpgrade.titleRes);
-                // 点击
-                upgradeViewHolder.view.SetOnClickListener(new UpgradeViewClick(this, itemUpgrade));
-            }
-            else if (holder is SynchronizeViewHolder) // 同步
-            {
-                SynchronizeViewHolder synchronizeViewHolder = (SynchronizeViewHolder)holder;
-                if (item is MenuDrawerItemSynchronize)
-                {
-                    MenuDrawerItemSynchronize itemSynchronize = (MenuDrawerItemSynchronize)item;
-                    synchronizeViewHolder.siv.SetBackgroundResource(itemSynchronize.iconRes);
-                    synchronizeViewHolder.stv.SetText(itemSynchronize.titleRes);
-                    // 点击
-                    synchronizeViewHolder.view.SetOnClickListener(new SynchronizeViewClick(this, itemSynchronize));
-                }
+                BodyViewHolder bodyViewHolder = (BodyViewHolder)holder;
+                MenuDrawerItemBody itemBody = (MenuDrawerItemBody)item;
+                bodyViewHolder.listView.Adapter = itemBody.adapter;
+                bodyViewHolder.synchronizeView.SetOnClickListener(new SynchronizeViewClick(this, itemBody));
+                bodyViewHolder.upgradeView.SetOnClickListener(new UpgradeViewClick(this, itemBody));
             }
         }
 
@@ -104,9 +65,9 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
         public class UpgradeViewClick : Java.Lang.Object, View.IOnClickListener
         {
             MenuDrawerAdapter _this;
-            MenuDrawerItemUpgrade itemUpgrade;
+            MenuDrawerItemBody itemUpgrade;
 
-            public UpgradeViewClick(MenuDrawerAdapter _this, MenuDrawerItemUpgrade itemUpgrade)
+            public UpgradeViewClick(MenuDrawerAdapter _this, MenuDrawerItemBody itemUpgrade)
             {
                 this._this = _this;
                 this.itemUpgrade = itemUpgrade;
@@ -130,7 +91,7 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
 
         public interface OnItemClickListener
         {
-            void itemClick(MenuDrawerItemUpgrade drawerItemNormal);
+            void itemClick(MenuDrawerItemBody drawerItemNormal);
         }
 
         #endregion
@@ -140,9 +101,9 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
         public class SynchronizeViewClick : Java.Lang.Object, View.IOnClickListener
         {
             MenuDrawerAdapter _this;
-            MenuDrawerItemSynchronize itemSynchronize;
+            MenuDrawerItemBody itemSynchronize;
 
-            public SynchronizeViewClick(MenuDrawerAdapter _this, MenuDrawerItemSynchronize itemSynchronize)
+            public SynchronizeViewClick(MenuDrawerAdapter _this, MenuDrawerItemBody itemSynchronize)
             {
                 this._this = _this;
                 this.itemSynchronize = itemSynchronize;
@@ -166,37 +127,22 @@ namespace LinkNote.Adapter.CustomizeNavigationViewAdapter
 
         public interface OnSynchronizeItemClickListener
         {
-            void itemClick(MenuDrawerItemSynchronize drawerItemNormal);
+            void itemClick(MenuDrawerItemBody drawerItemNormal);
         }
 
         #endregion
-
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             MenuDrawerViewHolder viewHolder = null;
             LayoutInflater inflater = LayoutInflater.From(parent.Context);
+
             switch (viewType)
             {
-                case TYPE_CONTENT: // 内容
-                    viewHolder = new ContentViewHolder(inflater
-                        .Inflate(Resource.Layout
-                        .CustomizeNavigationViewItemDrawerContent, parent, false));
-                    break;
-                case TYPE_UPGRADE: // 升级
-                    viewHolder = new UpgradeViewHolder(inflater
-                        .Inflate(Resource.Layout
-                        .CustomizeNavigationViewItemDrawerUpgrade, parent, false));
-                    break;
-                case TYPE_SYNCHRONIZE: // 同步
-                    viewHolder = new SynchronizeViewHolder(inflater
-                        .Inflate(Resource.Layout
-                        .CustomizeNavigationViewItemDrawerSynchronize, parent, false));
-                    break;
-                case TYPE_DIVIDER: // 分割线
-                    viewHolder = new SynchronizeViewHolder(inflater
-                        .Inflate(Resource.Layout
-                        .CustomizeNavigationViewItemDrawerDivider, parent, false));
+                case TYPE_BODY: // 内容
+                    viewHolder = new BodyViewHolder(inflater
+                                .Inflate(Resource.Layout
+                                .CustomizeNavigationViewItemDrawer, parent, false));
                     break;
             }
             return viewHolder;

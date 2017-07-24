@@ -39,7 +39,6 @@ namespace LinkNote.Model.CustomizeNavigationView
         }
     }
 
-
     /// <summary>
     /// 头部item
     /// </summary>
@@ -50,7 +49,6 @@ namespace LinkNote.Model.CustomizeNavigationView
         }
     }
 
-
     /// <summary>
     /// 首页菜单
     /// </summary>
@@ -60,62 +58,19 @@ namespace LinkNote.Model.CustomizeNavigationView
     }
 
     /// <summary>
-    /// 选择内容
+    /// 菜单
     /// </summary>
-    public class MenuDrawerItemContent : MenuDrawerItem
+    public class MenuDrawerItemBody : MenuDrawerItem
     {
         public BaseAdapter adapter;
 
-        public MenuDrawerItemContent(BaseAdapter adapter)
+        public MenuDrawerItemBody(BaseAdapter adapter)
         {
             this.adapter = adapter;
         }
     }
 
-    
-
-    /// <summary>
-    /// 分割线item
-    /// </summary>
-    public class MenuDrawerItemDivider : MenuDrawerItem
-    {
-        public MenuDrawerItemDivider()
-        {
-        }
-    }
-
-    /// <summary>
-    /// 升级账号
-    /// </summary>
-    public class MenuDrawerItemUpgrade : MenuDrawerItem
-    {
-        public int iconRes;
-        public int titleRes;
-
-        public MenuDrawerItemUpgrade(int iconRes, int titleRes)
-        {
-            this.iconRes = iconRes;
-            this.titleRes = titleRes;
-        }
-    }
-
-    /// <summary>
-    /// 同步账号
-    /// </summary>
-    public class MenuDrawerItemSynchronize : MenuDrawerItem
-    {
-        public int iconRes;
-        public int titleRes;
-
-        public MenuDrawerItemSynchronize(int iconRes, int titleRes)
-        {
-            this.iconRes = iconRes;
-            this.titleRes = titleRes;
-        }
-    }
-
     // -----------------------------ViewHolder数据模型-----------------------------
-
 
     public class MenuDrawerViewHolder : RecyclerView.ViewHolder
     {
@@ -125,54 +80,35 @@ namespace LinkNote.Model.CustomizeNavigationView
         }
     }
 
-    public class DividerViewHolder : MenuDrawerViewHolder
-    {
-        public DividerViewHolder(View itemView) : base(itemView)
-        {
-
-        }
-    }
-
     /// <summary>
-    /// 内容
+    /// 主体
     /// </summary>
-    public class ContentViewHolder : MenuDrawerViewHolder
+    public class BodyViewHolder : MenuDrawerViewHolder
     {
+        // 菜单list内容信息
         public ListView listView;
-        public LinearLayout rootView;
+        
+        // 升级账号菜单
+        public View upgradeView;
+        public TextView upgradetv;
+        public ImageView upgradeiv;
 
-        public ContentViewHolder(View itemView) : base(itemView)
+        // 同步内容
+        public View synchronizeView;
+        public TextView synchronizetv;
+        public ImageView synchronizeiv;
+
+        public BodyViewHolder(View itemView) : base(itemView)
         {
             listView = (ListView)itemView.FindViewById(Resource.Id.listViewMenu);
-            rootView = (LinearLayout)itemView;
-        }
-    }
 
-    public class UpgradeViewHolder : MenuDrawerViewHolder
-    {
-        public View view;
-        public TextView utv;
-        public ImageView uiv;
+            upgradeView = (LinearLayout)itemView.FindViewById(Resource.Id.UpgradeItemView);
+            upgradetv = (TextView)itemView.FindViewById(Resource.Id.utv);
+            upgradeiv = (ImageView)itemView.FindViewById(Resource.Id.uiv);
 
-        public UpgradeViewHolder(View itemView) : base(itemView)
-        {
-            view = itemView;
-            utv = (TextView)itemView.FindViewById(Resource.Id.utv);
-            uiv = (ImageView)itemView.FindViewById(Resource.Id.uiv);
-        }
-    }
-
-    public class SynchronizeViewHolder : MenuDrawerViewHolder
-    {
-        public View view;
-        public TextView stv;
-        public ImageView siv;
-
-        public SynchronizeViewHolder(View itemView) : base(itemView)
-        {
-            view = itemView;
-            stv = (TextView)itemView.FindViewById(Resource.Id.stv);
-            siv = (ImageView)itemView.FindViewById(Resource.Id.siv);
+            synchronizeView = (LinearLayout)itemView.FindViewById(Resource.Id.SynchronizeItemView);
+            synchronizetv = (TextView)itemView.FindViewById(Resource.Id.stv);
+            synchronizeiv = (ImageView)itemView.FindViewById(Resource.Id.siv);
         }
     }
 

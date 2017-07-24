@@ -7,11 +7,11 @@
     android:fitsSystemWindows="true">
     <include
         layout="@layout/NoteListViewPager" />
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/nav_view"
-      android:layout_width="@dimen/drawer_width"
-      android:layout_height="match_parent"
-      android:layout_gravity="start"
-      android:scrollbars="none"
-      android:background="@color/white_color" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/nav_view"
+        android:layout_width="@dimen/drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:scrollbars="none"
+        android:background="@color/white_color" />
 </android.support.v4.widget.DrawerLayout>
