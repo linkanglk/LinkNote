@@ -13,8 +13,11 @@
   <dimen name="drawer_item_height">50dp</dimen>
   <dimen name="drawer_bottom_item_height">47dp</dimen>
   <dimen name="drawer_item_icon_leftmargin">20dp</dimen>
-  <dimen name="drawer_item_text_leftmargin">18dp</dimen>
+  <dimen name="drawer_item_text_leftmargin">16dp</dimen>
   <dimen name="drawer_list_height">400dp</dimen>
+
+  <dimen name="drawer_small_icon"></dimen>
+  <dimen name="drawer_medium_icon"></dimen>
   
   <!-- 字体大小 -->
   <dimen name="text_micro">12sp</dimen>

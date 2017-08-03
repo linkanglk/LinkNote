@@ -19,5 +19,5 @@
         android:layout_marginLeft="@dimen/drawer_item_text_leftmargin"
         android:textColor="@color/menu_color"
         android:text="@string/drawer_menu_synchronize"
-        android:textSize="@dimen/text_small" />
+        android:textSize="@dimen/text_micro" />
 </LinearLayout>

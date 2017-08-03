@@ -48,5 +48,5 @@
 
 
   <string name="drawer_menu_upgrade">升级账号</string>
-  <string name="drawer_menu_synchronize">开始同步</string>
+  <string name="drawer_menu_synchronize">上次同步：7月27日 13:37</string>
 </resources>
